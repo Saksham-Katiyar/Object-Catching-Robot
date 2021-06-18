@@ -26,6 +26,7 @@
     <material>Gazebo/Orange</material>
   </gazebo>
 
+<!--
   <gazebo reference="camera">
     <material>Gazebo/Green</material>
     <sensor type="camera" name="camera1">
@@ -58,5 +59,6 @@
       </plugin>
     </sensor>
   </gazebo>
+-->
 
 </robot>

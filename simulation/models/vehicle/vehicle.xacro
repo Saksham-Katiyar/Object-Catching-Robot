@@ -131,7 +131,7 @@
 
   <!-- Set joints for the wheels which can be controlled over ROS -->
   <joint type="continuous" name="left_wheel_hinge">
-    <origin xyz="${-x_chassis/4} ${y_chassis/2+h_wheel/2} ${r_wheel/2-z_chassis/2}" rpy="0 0 0"/>
+    <origin xyz="${-x_chassis/3} ${y_chassis/2+h_wheel/2} ${r_wheel/2-z_chassis/2}" rpy="0 0 0"/>
     <child link="left_wheel"/>
     <parent link="base_link"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -139,7 +139,7 @@
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
   <joint type="continuous" name="right_wheel_hinge">
-    <origin xyz="${-x_chassis/4} ${-y_chassis/2-h_wheel/2} ${r_wheel/2-z_chassis/2}" rpy="0 0 0"/>
+    <origin xyz="${-x_chassis/3} ${-y_chassis/2-h_wheel/2} ${r_wheel/2-z_chassis/2}" rpy="0 0 0"/>
     <child link="right_wheel"/>
     <parent link="base_link"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -147,6 +147,7 @@
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
 
+<!--
   <link name="camera">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -177,5 +178,5 @@
     <parent link="chassis_link"/>
     <child link="camera"/>
   </joint>
-
+-->
 </robot>

@@ -25,7 +25,14 @@
   <!-- Spawn the robot after we built the urdf files -->
   <node name="vehicle_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
    args="-urdf -param vehicle_description -model vehicle" />
-   
+  
+  <!-- This command builds the urdf files from the xacro files by calling the launch file -->
+  <param name="camera_description" command="$(find xacro)/xacro --inorder '$(find simulation)/models/fixed_camera/fixed_camera.xacro'"/>
+  
+  <!-- Spawn the robot after we built the urdf files -->
+  <node name="camera_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+   args="-urdf -param camera_description -model fixed_camera" />
+
   <!-- Publish the TFs -->
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" >
     <remap from="robot_description" to="vehicle_description" />

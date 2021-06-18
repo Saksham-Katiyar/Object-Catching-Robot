@@ -14,8 +14,8 @@
   <xacro:property name="m_wheel" value="3.0" /> 
   <xacro:property name="torque_wheel" value="10" />
   <xacro:property name="L_wheel" value="0.1788" />
-
+<!--
   <xacro:property name="cameraSize" value="0.05"/>
   <xacro:property name="cameraMass" value="0.1"/>
-
+-->
 </robot>
