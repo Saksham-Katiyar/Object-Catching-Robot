@@ -63,7 +63,7 @@
   </joint>
 
   <joint type="continuous" name="camera_stand_joint">
-    <origin xyz="${x_camera} ${y_camera} ${z_camera-cameraSize/2}" rpy="3.1429 3.1429 -1.5714"/>
+    <origin xyz="${x_camera} ${y_camera} ${z_camera-cameraSize/2}" rpy="0 -0.3 1.5714"/>
     <child link="camera"/>
     <parent link="stand"/>
   </joint>

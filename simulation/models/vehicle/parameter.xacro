@@ -18,4 +18,11 @@
   <xacro:property name="cameraSize" value="0.05"/>
   <xacro:property name="cameraMass" value="0.1"/>
 -->
+
+  <xacro:property name="wall_thickness" value="0.02" />
+  <xacro:property name="wall_height" value="0.1" />
+  <xacro:property name="wall_offset" value="0.025" />
+  <xacro:property name="wall_mass1" value="0.6" />
+  <xacro:property name="wall_mass2" value="0.9" />
+  
 </robot>

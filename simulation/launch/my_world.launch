@@ -33,6 +33,11 @@
   <node name="camera_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
    args="-urdf -param camera_description -model fixed_camera" />
 
+  <!-- <param name="my_object_description" command="$(find xacro)/xacro inorder '$(find simulation)/models/object/my_object.xacro'"/>
+  
+  <node name="my_object_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+   args="-urdf -param my_object_description -model object" /> -->
+
   <!-- Publish the TFs -->
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" >
     <remap from="robot_description" to="vehicle_description" />

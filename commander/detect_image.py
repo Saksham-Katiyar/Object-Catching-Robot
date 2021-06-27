@@ -15,16 +15,18 @@ def showImage(img):
 
 def publish(x1, x2):
     vel_msg = Twist()
+    v0 = 2
     dx = x1-x2
     if dx>10:
-        vel_x = 1.3
+        vel_x = v0
     elif dx<10:
-        vel_x = -1.3
+        vel_x = -v0
     else:
         vel_x = 0
     if (x1 == -1) or (x2 == -1):
         vel_x = 0
     vel_msg.linear.x = vel_x
+    # vel_msg.linear.z = 100
     pub.publish(vel_msg)
 
 def nothing(x):
