@@ -16,7 +16,6 @@ catkin_package(
    rospy 
 )
 
-
 link_directories(${GAZEBO_LIBRARY_DIRS})
 
 include_directories(
@@ -24,7 +23,6 @@ include_directories(
     ${src}
     ${GAZEBO_INCLUDE_DIRS}
   )
-
 
 # Gazebo set flags
 list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
