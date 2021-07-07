@@ -2,21 +2,21 @@
 <launch>
 
   <!-- Define arguments -->
-  <arg name="world" 		default="empty"/> 
-  <arg name="paused" 		default="false"/>
-  <arg name="use_sim_time" 	default="true"/>
-  <arg name="gui" 		default="true"/>
-  <arg name="headless" 		default="false"/>
-  <arg name="debug" 		default="false"/>
+  <arg name="world"               default="empty"/> 
+  <arg name="paused"              default="true"/>
+  <arg name="use_sim_time"        default="true"/>
+  <arg name="gui"                 default="true"/>
+  <arg name="headless"            default="false"/>
+  <arg name="debug"               default="false"/>
   
   <!-- Load the world environment -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" 		value="$(find simulation)/worlds/empty_world.world"/>
-    <arg name="paused" 			value="$(arg paused)"/>
-    <arg name="use_sim_time"            value="$(arg use_sim_time)"/>
-    <arg name="gui" 			value="$(arg gui)"/>
-    <arg name="headless" 		value="$(arg headless)"/>
-    <arg name="debug" 			value="$(arg debug)"/>
+    <arg name="world_name"        value="$(find simulation)/worlds/empty_world.world"/>
+    <arg name="paused"            value="$(arg paused)"/>
+    <arg name="use_sim_time"      value="$(arg use_sim_time)"/>
+    <arg name="gui"               value="$(arg gui)"/>
+    <arg name="headless"          value="$(arg headless)"/>
+    <arg name="debug"             value="$(arg debug)"/>
   </include>
 
 <!-- This command builds the urdf files from the xacro files by calling the launch file -->
@@ -33,10 +33,10 @@
   <node name="camera_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
    args="-urdf -param camera_description -model fixed_camera" />
 
-  <!-- <param name="my_object_description" command="$(find xacro)/xacro inorder '$(find simulation)/models/object/my_object.xacro'"/>
+  <param name="my_object_description" command="$(find xacro)/xacro --inorder '$(find simulation)/models/object/my_object.xacro'"/>
   
   <node name="my_object_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
-   args="-urdf -param my_object_description -model object" /> -->
+   args="-urdf -param my_object_description -model object" />
 
   <!-- Publish the TFs -->
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" >

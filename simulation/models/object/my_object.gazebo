@@ -3,12 +3,10 @@
 
   
   <gazebo>
-    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
-      <commandTopic>my_object_cmd_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
-      <odometryRate>20.0</odometryRate>
-      <robotBaseFrame>base_link</robotBaseFrame>
+    <plugin name="Initial Velocity" filename="$(find simulation)/plugins/initial_velocity/build/libinitial_velocity.so">
+      <x_velocity>0</x_velocity>
+      <y_velocity>0</y_velocity>
+      <z_velocity>5</z_velocity>
     </plugin>
   </gazebo>
 
