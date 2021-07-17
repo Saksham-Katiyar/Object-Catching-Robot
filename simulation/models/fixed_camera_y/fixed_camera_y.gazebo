@@ -2,8 +2,8 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <gazebo reference="camera">
-    <material>Gazebo/Green</material>
-    <sensor type="camera" name="camera1">
+    <material>Gazebo/Blue</material>
+    <sensor type="camera" name="camera_y">
       <update_rate>30.0</update_rate>
       <camera name="head">
         <horizontal_fov>1.3962634</horizontal_fov>
@@ -20,7 +20,7 @@
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>30.0</updateRate>
-        <cameraName>vehicle/camera1</cameraName>
+        <cameraName>vehicle/camera_y</cameraName>
         <imageTopicName>image</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera</frameName>

@@ -1,10 +1,10 @@
 <?xml version='1.0'?>
 
 <!-- choose a name space and start xacro -->
-<robot name="fixed_camera" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="fixed_camera_y" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find simulation)/models/fixed_camera/camera_parameter.xacro"   />
-  <xacro:include filename="$(find simulation)/models/fixed_camera/fixed_camera.gazebo" />
+  <xacro:include filename="$(find simulation)/models/fixed_camera_y/camera_parameter_y.xacro"   />
+  <xacro:include filename="$(find simulation)/models/fixed_camera_y/fixed_camera_y.gazebo" />
 
   <link name='base_link2'>
     <pose>${x_camera} ${y_camera} 0 0 0 0</pose>
@@ -63,7 +63,7 @@
   </joint>
 
   <joint type="continuous" name="camera_stand_joint">
-    <origin xyz="${x_camera} ${y_camera} ${z_camera-cameraSize/2}" rpy="0 -0.3 1.5714"/>
+    <origin xyz="${x_camera} ${y_camera} ${z_camera-cameraSize/2}" rpy="0 -0.3 0"/>
     <child link="camera"/>
     <parent link="stand"/>
   </joint>

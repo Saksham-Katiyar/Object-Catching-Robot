@@ -1,0 +1,71 @@
+<?xml version='1.0'?>
+
+<!-- choose a name space and start xacro -->
+<robot name="fixed_camera_x" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find simulation)/models/fixed_camera_x/camera_parameter_x.xacro"   />
+  <xacro:include filename="$(find simulation)/models/fixed_camera_x/fixed_camera_x.gazebo" />
+
+  <link name='base_link2'>
+    <pose>${x_camera} ${y_camera} 0 0 0 0</pose>
+  </link>
+
+  <link name="stand">
+    <collision>
+      <origin xyz="${x_stand} ${y_stand} ${z_stand}" rpy="0 0 0"/>
+      <geometry>
+        <box size="${stand_xSize} ${stand_ySize} ${stand_zSize}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="${x_stand} ${y_stand} ${z_stand}" rpy="0 0 0"/>
+      <geometry>
+        <box size="${stand_xSize} ${stand_ySize} ${stand_zSize}"/>
+      </geometry>
+      <material name="orange"/>
+    </visual>
+
+    <inertial>
+      <mass value="${standMass}" />
+      <origin xyz="${x_stand} ${y_stand} ${z_stand}" rpy="0 0 0"/>
+      <inertia ixx="0.36467" ixy="0" ixz="-1.071125" iyy="4.56733" iyz="0" izz="4.2206" />
+    </inertial>
+  </link>
+
+  <link name="camera">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${cameraSize} ${cameraSize} ${cameraSize}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${cameraSize} ${cameraSize} ${cameraSize}"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+
+    <inertial>
+      <mass value="${cameraMass}" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.100041666" ixy="0" ixz="-0.3" iyy="0.500041666" iyz="0" izz="0.400041666" />
+    </inertial>
+  </link>
+
+  
+  <joint type="fixed" name="base_link_to_stand">
+    <child link="stand"/>
+    <parent link="base_link2"/>
+  </joint>
+
+  <joint type="continuous" name="camera_stand_joint">
+    <origin xyz="${x_camera} ${y_camera} ${z_camera-cameraSize/2}" rpy="0 -0.3 1.5708"/>
+    <child link="camera"/>
+    <parent link="stand"/>
+  </joint>
+
+</robot>

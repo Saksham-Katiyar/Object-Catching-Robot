@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  
+  <xacro:property name="cameraSize" value="0.05"/>
+  <xacro:property name="cameraMass" value="0.1"/>
+  <xacro:property name="x_camera" value="-3" />
+  <xacro:property name="y_camera" value="0" />
+  <xacro:property name="z_camera" value="1" />
+
+  <xacro:property name="x_stand" value="-3.05" />
+  <xacro:property name="y_stand" value="0" />
+  <xacro:property name="z_stand" value="0.5225" />
+  <xacro:property name="stand_xSize" value="0.1" />
+  <xacro:property name="stand_ySize" value="0.09" />
+  <xacro:property name="stand_zSize" value="1.045" />
+  <xacro:property name="standMass" value="0.5" />
+
+</robot>
