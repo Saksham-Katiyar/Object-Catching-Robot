@@ -106,8 +106,15 @@ def callback(data):
             xx=start_x_object-x_bot
             predicted_x_object=(vel_object_x*time_available)+x
             vel_x=((predicted_x_object-xx)/(time_available))*0.012
+            
+            if abs(y_object-y_bot)<=25:
+                vel_x=0
+            
             vel_msg.linear.x= -vel_x
-            pub1.publish(vel_msg) 
+            
+            if i!=3:
+                pub1.publish(vel_msg) 
+             
             print(vel_x)
             #print(vel_object_x,vel_object_y,object_h_bot)
             prev_time=curr_time
