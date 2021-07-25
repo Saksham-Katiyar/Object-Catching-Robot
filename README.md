@@ -11,4 +11,4 @@ Commander package includes the publisher and subscriber nodes for the robot.
 * Clone this repo inside the `src` folder of your ROS workspace
 * Go back to the worksace directory and use `catkin_make` to build the package
 * Use command `roslaunch simulation my_world.launch` to start the simulation of the robot and world. The camera module start publishing the raw data.
-* Then in a new terminal, start the subsriber node using `rosrun commander detect_image.py` which then streams the camera input to a screen
+* Then in a new terminal, start the subsriber node using `rosrun commander command.py` which then streams the camera input to a screen
